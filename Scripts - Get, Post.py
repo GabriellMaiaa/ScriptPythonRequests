@@ -10,12 +10,12 @@ session.mount("http://", adapter)
 session.mount("https://", adapter)
 
 
-baseUrl ='https://compras.betha.cloud/compras-services'
-headers = {'authorization':'Bearer 80a8059d-acf1-4d49-8e32-ec338d0d3f31'}
-entidade = '1'
-exercicio = '2011'
-processo = '75'
-idGerado = '648241'
+baseUrl =''
+headers = {'authorization':}
+entidade = ''
+exercicio = ''
+processo = ''
+idGerado = ''
 
 def getConsulta (processo, exercicio):
     hasNext=True
