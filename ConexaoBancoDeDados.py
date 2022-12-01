@@ -1,5 +1,5 @@
 dbConexao = "NOME DA CONEXÃO DO BANCO"# Script de conexão com o Banco de Dados
-with SybaseConnect().connect_from_odbc(dbConexao) as laConexao:  
+with #Botar a conexão do Banco as laConexao:  
         cursor = laConexao.cursor()
         
         laSQL=""--Consulta que percorre
@@ -15,16 +15,16 @@ with SybaseConnect().connect_from_odbc(dbConexao) as laConexao:
                 
                 for row in records:
                     #print(row) 
-                    #print(row.i_chave_dsk2)
-                    # print(row.i_chave_dsk3)
+                    #print(row.params)
+                    # print(row.params)
 
-                    idgerado = getId(row.i_chave_dsk3, row.i_chave_dsk2)    
+                    idgerado = getId(row.params, row.params)    
                     # print(idgerado)    
                     if(idgerado != None):
                         print(idgerado)
                         print(row.hash_chave_dsk)
                         # Executar update no banco
-                        updateId( laConexao,idgerado,row.hash_chave_dsk )
+                       
 
                 #endFor
             #endWhile
