@@ -12,21 +12,18 @@ session.mount("https://", adapter)
 
 baseUrl =''
 headers = {'authorization':}
-entidade = ''
-exercicio = ''
-processo = ''
-idGerado = ''
+#Parâmetross
 
-def getConsulta (processo, exercicio):
+def getConsulta ():
     hasNext=True
     offset=0
     limit=100
-    baseApi = f'{baseUrl}/api/processosadministrativo/{idGerado}/contratacao'
+    baseApi = 
     
         # print(f"Buscando Processo {processo}")
     
     while(hasNext):                                        
-        api=f"{baseApi}?filter=(numeroprocesso+in+('{processo}'))&limit={limit}&offset={offset}"
+        api=f"{baseApi}?filter=(numeroprocesso+in+('{params}'))&limit={limit}&offset={offset}"
         
         response = session.get(api,headers=headers)
         result = response.json() if 'application/json' in response.headers.get('Content-Type') else json.loads(response.text)
