@@ -1,8 +1,8 @@
-dbConexao = "NOME DA CONEXÃO DO BANCO"# Script de conexão com o Banco de D
+dbConexao = "NOME DA CONEXÃO DO BANCO"# Script de conexão com o Banco de Dados
 with SybaseConnect().connect_from_odbc(dbConexao) as laConexao:  
         cursor = laConexao.cursor()
         
-        laSQL="SELECT * FROM bethadba.controle_migracao_registro_ocor as ocor with (nolock)JOIN bethadba.controle_migracao_registro as reg with (nolock) where ocor.tipo_registro IN ('convidado-licitacao')  and resolvido = '1' and mensagem_erro ='javax.ejb.EJBTransactionRolledbackException' order by mensagem_erro asc"
+        laSQL=""--Consulta que percorre
         try:
             number_of_rows = cursor.execute(laSQL)
             print(laSQL)
